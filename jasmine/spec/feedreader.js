@@ -102,9 +102,23 @@ $(function() {
     });
 
     /* TODO: Write a new test suite named "New Feed Selection" */
+    describe('New Feed Selection', function() {
+        const feed = document.querySelector('.feed');
+        let innerHTMLBefore;
 
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+        beforeEach(function(done) {
+            loadFeed(0);
+            innerHTMLBefore = feed.innerHTML;
+            loadFeed(1, done);
+        });
+
+        it('changes the content', function() {
+            const innerHTMLAfter = feed.innerHTML;
+            expect(innerHTMLAfter).not.toEqual(innerHTMLBefore);
+        });
+    });
 }());
