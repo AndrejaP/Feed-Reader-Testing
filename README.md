@@ -24,8 +24,8 @@ Click on the index.html file to open it in your browser.
 
 ## Resources
 
-[Jasmine](http://jasmine.github.io/)
-[Roboto](https://fonts.google.com/specimen/Roboto) font from Google Fonts.
+* [Jasmine](http://jasmine.github.io/)
+* [Roboto](https://fonts.google.com/specimen/Roboto) font from Google Fonts.
 
 ## Licence
 
