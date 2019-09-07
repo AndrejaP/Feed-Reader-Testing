@@ -53,7 +53,7 @@ $(function() {
         });
 
          /* The test ensures the menu changes visibility when the menu icon is clicked.
-		 * It has two expectations: does the menu display when clicked and hide when clicked again.
+          * It has two expectations: does the menu display when clicked and hide when clicked again.
          */
         it('toggles when the menu icon is clicked', function() {
             const menu = document.querySelector('.menu-icon-link');
@@ -75,7 +75,7 @@ $(function() {
         beforeEach(function(done) {
             loadFeed(0, done);
         });
- 
+
         it('are loaded', function() {
                 const entry = document.querySelector('.feed .entry');
              expect(entry).toBeDefined();
