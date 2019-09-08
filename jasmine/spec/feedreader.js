@@ -95,8 +95,12 @@ $(function() {
          */
         beforeEach(function(done) {
             loadFeed(0, function() {
-            innerHTMLBefore = feed.innerHTML;
-            loadFeed(1, done);
+                /* Stores innerHTML of the feed container in this callback to make sure that the current
+                 * innerHTML contains the feed entries of the current loadFeed call
+                 */
+                innerHTMLBefore = feed.innerHTML;
+                //to make sure the first loadFeed call has finished the asyncronous task we call the second one within it
+                loadFeed(1, done);
             });
         });
 
