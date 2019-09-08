@@ -10,8 +10,8 @@
 $(function() {
 
      /* The test suite contains a related set of tests. This suite is all about the RSS
-     * feeds definitions, the allFeeds variable in our application.
-     */
+      * feeds definitions, the allFeeds variable in our application.
+      */
      describe('RSS Feeds', function() {
 
        // This test makes sure that the allFeeds variable has been defined and that it is not empty
@@ -54,7 +54,7 @@ $(function() {
 
          /* The test ensures the menu changes visibility when the menu icon is clicked.
           * It has two expectations: does the menu display when clicked and hide when clicked again.
-         */
+          */
         it('toggles when the menu icon is clicked', function() {
             const menu = document.querySelector('.menu-icon-link');
             menu.click();
@@ -77,8 +77,10 @@ $(function() {
         });
 
         it('are loaded', function() {
-                const entry = document.querySelector('.feed .entry');
-             expect(entry).toBeDefined();
+            //const entry = document.querySelector('.feed .entry');
+            //expect(entry).not.toBeNull();
+            const entries = document.querySelectorAll('.feed .entry');
+            expect(entries.length).toBeGreaterThan(0);
         });
     });
 
@@ -92,9 +94,10 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          */
         beforeEach(function(done) {
-            loadFeed(0);
+            loadFeed(0, function() {
             innerHTMLBefore = feed.innerHTML;
             loadFeed(1, done);
+            });
         });
 
         it('changes the content', function() {
